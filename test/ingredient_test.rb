@@ -1,17 +1,3 @@
-# pry(main)> require './lib/ingredient'
-# # => true
-
-# pry(main)> ingredient = Ingredient.new("Cheese", "oz", 50)
-# # => #<Ingredient:0x007fe6041273d8...>
-
-# pry(main)> ingredient.name
-# # => "Cheese"
-
-# pry(main)> ingredient.unit
-# # => "oz"
-
-# pry(main)> ingredient.calories
-
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/ingredient'
