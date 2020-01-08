@@ -55,6 +55,26 @@ class RecipeTest < Minitest::Test
     recipe.add_ingredient(ingredient2, 8)
     assert_equal 440, recipe.total_calories
   end
+
+  def test_it_can_sort_ingredient_per_calories_contributed
+    ingredient1 = Ingredient.new("Cheese", "C", 100)
+    ingredient2 = Ingredient.new("Macaroni", "oz", 30)
+    recipe = Recipe.new("Mac and Cheese")
+    recipe.add_ingredient(ingredient1, 2)
+    recipe.add_ingredient(ingredient2, 8)
+    assert_equal [ingredient2, ingredient1], recipe.ingredients_sorted
+  end
+
+  def test_it_can_display_ingredients
+    ingredient1 = Ingredient.new("Cheese", "C", 100)
+    ingredient2 = Ingredient.new("Macaroni", "oz", 30)
+    recipe = Recipe.new("Mac and Cheese")
+    recipe.add_ingredient(ingredient1, 2)
+    recipe.add_ingredient(ingredient2, 8)
+    require 'pry'; binding.pry
+    recipe.display_ingredients
+  end
+
   
   
 end
